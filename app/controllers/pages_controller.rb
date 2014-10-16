@@ -4,4 +4,8 @@ class PagesController < ApplicationController
 
   def features
   end
+
+  def log_in
+    @user = User.new
+  end
 end
