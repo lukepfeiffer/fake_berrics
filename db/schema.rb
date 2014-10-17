@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016192322) do
+ActiveRecord::Schema.define(version: 20141017003051) do
 
   create_table "authem_sessions", force: true do |t|
     t.string   "role",                    null: false
@@ -36,9 +36,12 @@ ActiveRecord::Schema.define(version: 20141016192322) do
   end
 
   create_table "videos", force: true do |t|
-    t.string "name"
-    t.text   "desc"
-    t.string "filepicker_url"
+    t.string   "name"
+    t.text     "desc"
+    t.string   "filepicker_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "category"
   end
 
 end

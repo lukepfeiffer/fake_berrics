@@ -1,0 +1,17 @@
+%h1 Create that Bit
+
+%ul.left
+  = form_for(@video) do |f|
+    %li= f.label :name
+    %li= f.text_field :name, placeholder: 'Video Name'
+
+    %li= f.label :description
+    %li= f.text_area :desc, placeholder: 'Description'
+
+    %li= f.label :category
+    %li= f.text_field :category, placeholder: 'Category'
+
+    %li= f.label :filepicker_url
+    %li= f.filepicker_field :filepicker_url
+
+    %li= f.submit 'Create Video'

@@ -8,9 +8,11 @@
   %h1 Berrics
   -if current_user.present?
     %span= link_to 'Sign Out', sign_out_path, method: :delete
+    %span= link_to 'Create Video', new_video_path
   -else
     %span= link_to 'Sign In', log_in_path
   %div
+    = link_to 'Videos', videos_path
     = link_to 'Feature', features_path
     -# = link_to 'News', news_path
     = link_to 'Store', products_path

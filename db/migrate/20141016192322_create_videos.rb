@@ -4,6 +4,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :name
       t.text :desc
       t.string :filepicker_url
+      t.timestamps
     end
   end
 end

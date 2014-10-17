@@ -1,1 +1,19 @@
-%h1 videos
+%div.videos
+  %ul.new_videos
+    - @video.each do |video|
+      %li.name= video.name
+      %li= filepicker_image_tag video.filepicker_url
+      %li.desc= video.desc
+
+  %div.right_side_info
+    %ul.right_ul
+      %div.recent_div
+        %p#recent_p Recent Videos
+      - @recent_video.each do |recent|
+        %span.recent_image= filepicker_image_tag recent.filepicker_url
+        %li.recent_name= recent.name
+        %li.recent_desc= recent.desc
+
+    %ul.right_ul
+      %div.recent_div
+        %p#recent_p Recent News
