@@ -6,6 +6,13 @@ li{
   list-style-type: none;
 }
 
+td{
+  float: left;
+}
+
+.header{
+}
+
 .sign_up{
   width: 500px;
 }

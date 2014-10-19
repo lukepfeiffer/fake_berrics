@@ -1,0 +1,12 @@
+%ul
+  = form_for(@product) do |f|
+    %li= f.label :name
+    %li= f.text_field :name
+
+    %Li= f.label :desc
+    %li= f.text_field :desc
+
+    %li= f.label :price
+    %li= f.number_field :price
+
+    %li= f.submit

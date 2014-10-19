@@ -12,8 +12,9 @@
   -else
     %span= link_to 'Sign In', log_in_path
   %div
-    = link_to 'Videos', videos_path
-    = link_to 'Feature', features_path
-    -# = link_to 'News', news_path
-    = link_to 'Store', products_path
+    = link_to 'Videos', videos_path, class: 'header'
+    = link_to 'Feature', features_path, class: 'header'
+    = link_to 'Store', products_path, class: 'header'
+    = text_field_tag :name
+    = submit_tag 'Search', class: 'search_button'
   = yield

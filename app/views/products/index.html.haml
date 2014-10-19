@@ -1,0 +1,9 @@
+%div= link_to 'Create Product', new_product_path
+
+%table
+  - @products.each do |product|
+    %td
+      IMAGE
+      %li= product.name
+      %li= product.desc
+      %li= product.price
