@@ -1,5 +1,5 @@
-%div.videos
-  %ul.new_videos
+%div
+  %ul.videos
     - @video.each do |video|
       %li.name= video.name
       %li= filepicker_image_tag video.filepicker_url
@@ -10,7 +10,7 @@
       %div.recent_div
         %p#recent_p Recent Videos
       - @recent_video.each do |recent|
-        %span.recent_image= filepicker_image_tag recent.filepicker_url
+        %span.recent_image= link_to(filepicker_image_tag(recent.filepicker_url), video_path(recent.id))
         %li.recent_name= recent.name
         %li.recent_desc= recent.desc
 

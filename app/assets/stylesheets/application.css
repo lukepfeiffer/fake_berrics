@@ -19,9 +19,6 @@ li{
 }
 
 .videos{
-}
-
-.new_videos{
   float: left;
   padding: 0;
   width: 800px;
@@ -32,7 +29,7 @@ li{
   box-shadow: 2px 2px 2px 2px #333;
 }
 
-.new_videos img{
+.videos img{
   width: 700px;
   height: 500px;
 }

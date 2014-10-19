@@ -4,6 +4,11 @@ class VideosController < ApplicationController
     @recent_video = Video.order('created_at DESC').limit(5)
   end
 
+  def show
+    @video = Video.find(params[:id])
+    @recent_video = Video.order('created_at DESC').limit(5)
+  end
+
   def new
     @video = Video.new
   end
