@@ -3,10 +3,16 @@
     %li= f.label :name
     %li= f.text_field :name
 
-    %Li= f.label :desc
-    %li= f.text_field :desc
+    %li= f.label :desc
+    %li= f.text_area :desc
+
+    %li= f.label :category
+    %li= f.text_field :category
 
     %li= f.label :price
     %li= f.number_field :price
+
+    %li= f.label :Image
+    %li= f.filepicker_field :filepicker_url
 
     %li= f.submit

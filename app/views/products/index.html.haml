@@ -3,7 +3,8 @@
 %table
   - @products.each do |product|
     %td
-      IMAGE
+      %li= link_to(filepicker_image_tag(product.filepicker_url), product_path(product.id))
       %li= product.name
       %li= product.desc
-      %li= product.price
+      %p= product.category
+      %p= product.price
