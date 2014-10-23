@@ -1,0 +1,12 @@
+%h1 yo
+
+%div
+  %li= @product.name
+  %li= filepicker_image_tag @product.filepicker_url
+  %li= @product.desc
+  %li= @product.price
+  %li= @product.category
+  %li
+    = form_tag add_to_cart_user_path(current_user) do
+      = hidden_field_tag :product_id, @product.id
+      = submit_tag 'Add To Cart'

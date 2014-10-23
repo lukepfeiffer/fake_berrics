@@ -4,7 +4,7 @@
   - @products.each do |product|
     %td
       %li= link_to(filepicker_image_tag(product.filepicker_url), product_path(product.id))
-      %li= product.name
+      %li= link_to product.name, product_path(product.id)
       %li= product.desc
       %p= product.category
       %p= product.price

@@ -3,6 +3,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def add_to_cart
+    product = Product.find(params[:product_id])
+    current_user.cart.products << product
+    redirect_to product_path(product)
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
