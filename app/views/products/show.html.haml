@@ -9,4 +9,5 @@
   %li
     = form_tag add_to_cart_user_path(current_user) do
       = hidden_field_tag :product_id, @product.id
+      = number_field_tag :quantity, 1,  min: 1, max: 10
       = submit_tag 'Add To Cart'

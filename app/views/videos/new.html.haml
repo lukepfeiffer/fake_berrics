@@ -9,7 +9,7 @@
     %li= f.text_area :desc, placeholder: 'Description'
 
     %li= f.label :category
-    %li= f.text_field :category, placeholder: 'Category'
+    %li= f.select :category, Video::Categories, prompt: 'Select Category'
 
     %li= f.label :filepicker_url
     %li= f.filepicker_field :filepicker_url

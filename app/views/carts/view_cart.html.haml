@@ -1,6 +1,13 @@
 %div
-  - current_user.cart.products.each do |cart|
-    %li= cart.name
-    %li= filepicker_image_tag cart.filepicker_url
-    %li= cart.desc
-    %li= cart.price
+  %p#your_cart Your Cart
+  - current_user.cart.items.each do |item|
+    %ul.cart
+      %li= item.name
+      %li.desc= item.desc
+      %p.desc
+        price:
+        = item.price
+      %p.quantity
+        quantity:
+        = item.quantity
+      %div= filepicker_image_tag item.filepicker_url

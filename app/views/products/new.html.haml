@@ -6,11 +6,10 @@
     %li= f.label :desc
     %li= f.text_area :desc
 
-    %li= f.label :category
-    %li= f.text_field :category
+    %li= f.select :category,  Product::Categories, prompt: 'Select Category'
 
     %li= f.label :price
-    %li= f.number_field :price
+    %li= f.number_field :price, value: 1 , min: 1
 
     %li= f.label :Image
     %li= f.filepicker_field :filepicker_url

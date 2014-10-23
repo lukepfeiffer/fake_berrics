@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   end
 
   def add_to_cart
-    product = Product.find(params[:product_id])
-    current_user.cart.products << product
-    redirect_to product_path(product)
+    item.quantity = item.quantity + added_quantity
+    item.save
+    redirect_to product_path(item.product)
   end
 
   def create
@@ -25,4 +25,15 @@ class UsersController < ApplicationController
       :password_confirmation
     )
   end
+
+  private
+
+  def added_quantity
+    params.fetch(:quantity, 1).to_i
+  end
+
+  def item
+    @item ||= current_user.cart.items.find_or_initialize_by(product_id: params[:product_id])
+  end
+
 end

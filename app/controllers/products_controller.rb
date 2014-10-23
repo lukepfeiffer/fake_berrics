@@ -25,7 +25,8 @@ class ProductsController < ApplicationController
       :name,
       :desc,
       :price,
-      :category
+      :category,
+      :filepicker_url
     )
   end
 end
