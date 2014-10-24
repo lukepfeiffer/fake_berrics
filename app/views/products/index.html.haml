@@ -1,10 +1,19 @@
-%div= link_to 'Create Product', new_product_path
+= link_to 'Create Product', new_product_path
+%div.categories
+  %td Shoes
+  %td Shirts
+  %td Pants
+  %td Hats
+  %td Shorts
+  %td Socks
 
 %table
   - @products.each do |product|
     %td
       %li= link_to(filepicker_image_tag(product.filepicker_url), product_path(product.id))
-      %li= link_to product.name, product_path(product.id)
+      %li= product.name
       %li= product.desc
-      %p= product.category
-      %p= product.price
+      %p= link_to product.category
+      %p
+        $
+        = product.price

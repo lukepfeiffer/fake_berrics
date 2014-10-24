@@ -7,7 +7,27 @@ li{
   list-style-type: none;
 }
 
+table{
+  background-color: #fff;
+  padding: 5px;
+}
+
 td{
+  float: left;
+  width: 200px;
+}
+
+td img{
+  width: 180px;
+  height: 190px;
+}
+
+.full_size img{
+  height: 300px;
+  width: 250px;
+}
+
+.categories{
   float: left;
 }
 
