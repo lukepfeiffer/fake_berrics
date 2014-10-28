@@ -1,5 +1,7 @@
 %div
-  %p#your_cart Your Cart
+  %p#your_cart
+  Cart:
+  = current_user.cart.items.count
   - current_user.cart.items.each do |item|
     %ul.cart
       %li= item.name
@@ -11,3 +13,5 @@
         quantity:
         = item.quantity
       %div= filepicker_image_tag item.filepicker_url
+  %p#price
+    Total Price:
