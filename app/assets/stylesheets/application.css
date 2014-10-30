@@ -22,6 +22,14 @@ td img{
   height: 190px;
 }
 
+.review{
+  float: right;
+}
+
+.full_size{
+  float: left;
+}
+
 .full_size img{
   height: 300px;
   width: 250px;
