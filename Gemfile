@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'filepicker-rails'
+gem 'textacular'
 gem 'haml-rails'
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'

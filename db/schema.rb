@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023013342) do
+ActiveRecord::Schema.define(version: 20141102135149) do
 
   create_table "authem_sessions", force: true do |t|
     t.string   "role",                    null: false
