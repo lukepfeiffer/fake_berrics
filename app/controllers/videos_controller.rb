@@ -26,7 +26,8 @@ class VideosController < ApplicationController
     params.require(:video).permit(
       :name,
       :desc,
-      :filepicker_url
+      :filepicker_url,
+      :category
     )
   end
 end

@@ -148,18 +148,26 @@ td img{
   padding: 11px;
 }
 
-.recent_name{
-  float: right;
+.recent_info{
+  margin: 0;
+}
+
+#recent_name{
   font-size: 19px;
   font-weight: bold;
 }
 
 .recent_desc{
+  margin: 0;
+  width: absolute;
   font-size: 12px;
 }
 
 .recent_div{
   background-color: #000
+}
+
+#recent_links{
 }
 
 #recent_p{

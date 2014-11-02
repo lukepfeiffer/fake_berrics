@@ -3,7 +3,9 @@
     - @video.each do |video|
       %li.name= video.name
       %li= filepicker_image_tag video.filepicker_url
-      %li.desc= video.desc
+      %li.desc
+        = video.desc
+        = link_to video.category
 
   %div.right_side_info
     %ul.right_ul
@@ -11,8 +13,9 @@
         %p#recent_p Recent Videos
       - @recent_video.each do |recent|
         %span.recent_image= link_to(filepicker_image_tag(recent.filepicker_url), video_path(recent.id))
-        %li.recent_name= recent.name
-        %li.recent_desc= recent.desc
+        %p.recent_info
+          %span#recent_name= recent.name
+          = recent.desc
 
     %ul.right_ul
       %div.recent_div
