@@ -8,22 +8,24 @@
     $
     = @product.price
   %li= @product.category
-  %li
-    = form_tag add_to_cart_user_path(current_user) do
-      = hidden_field_tag :product_id, @product.id
-      = number_field_tag :quantity, 1,  min: 1, max: 10
-      = submit_tag 'Add To Cart'
-%div.review
-  %p Leave a Review
-  = form_for(@review) do |f|
-    = hidden_field :product_id, @product.id
-    = hidden_field :user_id, current_user.id
-    %li= f.label :text
-    %li= f.text_area :text
+  - if current_user.present?
+    %li
+      = form_tag add_to_cart_user_path(current_user) do
+        = hidden_field_tag :product_id, @product.id
+        = number_field_tag :quantity, 1,  min: 1, max: 10
+        = submit_tag 'Add To Cart'
+  - if current_user.present?
+    %div
+      %p Leave a Review
+      = form_for(@review) do |f|
+        = hidden_field :product_id, @product.id
+        = hidden_field :user_id, current_user.id
+        %li= f.label :text
+        %li= f.text_area :text
 
-    %li= f.label :rating
-    %li= f.number_field :rating, min: 1, max: 10
-    %li= f.submit 'Leave Review'
+        %li= f.label :rating
+        %li= f.number_field :rating, min: 1, max: 10
+        %li= f.submit 'Leave Review'
 
 %div.review_list
   Reviews

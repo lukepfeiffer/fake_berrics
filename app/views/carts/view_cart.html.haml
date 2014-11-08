@@ -1,17 +1,20 @@
 %div
-  %p#your_cart
-  Cart:
-  = current_user.cart.items.count
-  - current_user.cart.items.each do |item|
-    %ul.cart
-      %li= item.name
-      %li.desc= item.desc
-      %p.desc
-        price:
-        = item.price
-      %p.quantity
-        quantity:
-        = item.quantity
-      %div= filepicker_image_tag item.filepicker_url
-  %p#price
-    Total Price:
+  -if current_user.present?
+    %p#your_cart
+    Cart:
+    = current_user.cart.items.count
+    - current_user.cart.items.each do |item|
+      %ul.cart
+        %li= item.name
+        %li.desc= item.desc
+        %p.desc
+          price:
+          = item.price
+        %p.quantity
+          quantity:
+          = item.quantity
+        %div= filepicker_image_tag item.filepicker_url
+    %p#price
+      Total Price:
+  -else
+    %p Must be signed in to view cart
