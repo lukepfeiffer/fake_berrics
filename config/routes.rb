@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :videos
   resources :reviews
   resources :products
-  resources :news
+  resources :news_articles
   resources :users do
     member do
       post 'add_to_cart'
