@@ -4,7 +4,7 @@
       = text_field_tag :search
       = submit_tag 'Search', class: 'search_button'
   %ul.videos
-    - @video.each do |video|
+    - @videos.each do |video|
       %li.name= video.name
       %li= filepicker_image_tag video.filepicker_url
       %li.desc

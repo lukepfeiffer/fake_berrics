@@ -1,9 +1,9 @@
 class VideosController < ApplicationController
   def index
     if params[:search].present?
-      @video = Video.fuzzy_search(params[:search]).order('created_at DESC')
+      @videos = Video.fuzzy_search(params[:search]).order('created_at DESC')
     else
-      @video = Video.all.order('created_at DESC')
+      @videos = Video.order('created_at DESC')
     end
     @recent_video = Video.order('created_at DESC').limit(5)
   end

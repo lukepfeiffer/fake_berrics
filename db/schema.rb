@@ -13,6 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20141102135149) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "pg_trgm"
+
   create_table "authem_sessions", force: true do |t|
     t.string   "role",                    null: false
     t.integer  "subject_id",              null: false
@@ -24,8 +28,8 @@ ActiveRecord::Schema.define(version: 20141102135149) do
     t.datetime "updated_at"
   end
 
-  add_index "authem_sessions", ["expires_at", "subject_type", "subject_id"], name: "index_authem_sessions_subject"
-  add_index "authem_sessions", ["expires_at", "token"], name: "index_authem_sessions_on_expires_at_and_token", unique: true
+  add_index "authem_sessions", ["expires_at", "subject_type", "subject_id"], name: "index_authem_sessions_subject", using: :btree
+  add_index "authem_sessions", ["expires_at", "token"], name: "index_authem_sessions_on_expires_at_and_token", unique: true, using: :btree
 
   create_table "carts", force: true do |t|
     t.integer "user_id"
