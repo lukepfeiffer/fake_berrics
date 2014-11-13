@@ -22,6 +22,10 @@ td img{
   height: 190px;
 }
 
+.user_links{
+  float:right
+}
+
 .full_size{
   float: left;
 }

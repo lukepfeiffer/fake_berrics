@@ -1,7 +1,7 @@
 %div
   %div.search
     = form_tag(videos_path, method: :get) do
-      = text_field_tag :search
+      = text_field_tag :search, nil, placeholder: 'Search Videos', class: 'seach_bar'
       = submit_tag 'Search', class: 'search_button'
   %ul.videos
     - @videos.each do |video|

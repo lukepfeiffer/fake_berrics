@@ -1,3 +1,4 @@
 %ul
-  %li.home_video= filepicker_image_tag @video.filepicker_url
+  - if @video.present?
+    %li.home_video= filepicker_image_tag @video.filepicker_url
   %li.enter= link_to 'Enter The Berrics', videos_path

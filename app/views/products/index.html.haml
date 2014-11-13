@@ -1,11 +1,7 @@
 = link_to 'Create Product', new_product_path
 %div.categories
-  %td=link_to 'Shoes'
-  %td=link_to 'Shirts'
-  %td=link_to 'Pants'
-  %td=link_to 'Hats'
-  %td=link_to 'Shorts'
-  %td=link_to 'Socks'
+  - @categories.pluck(:category).uniq.each do |category|
+    %td= link_to category, products_path(category: category), class: 'category_links'
 
 %table
   - @products.each do |product|
