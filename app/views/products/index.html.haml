@@ -1,6 +1,6 @@
 = link_to 'Create Product', new_product_path
 %div.categories
-  - @categories.pluck(:category).uniq.each do |category|
+  - @categories.each do |category|
     %td= link_to category, products_path(category: category), class: 'category_links'
 
 %table

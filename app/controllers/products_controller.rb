@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
-    @categories = Product.all
+    if params[:category].present?
+      @products = Product.where(category: params[:category])
+    else
+      @products = Product.all
+    end
+    @categories = Product.pluck(:category).uniq
   end
 
   def new
