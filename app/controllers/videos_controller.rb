@@ -17,6 +17,15 @@ class VideosController < ApplicationController
     @video = Video.new
   end
 
+  def features
+    if params[:category].present?
+      @videos = Video.where(category: params[:category])
+    else
+      @videos = Video.all
+    end
+    @categories = Video.pluck(:category).uniq
+  end
+
   def create
    @video = Video.new(video_params)
    if @video.save

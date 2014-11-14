@@ -1,0 +1,5 @@
+%h1 Features
+
+%ul
+  - @categories.each do |category|
+    %td= link_to category, videos_path(category: category), class: 'features_links'

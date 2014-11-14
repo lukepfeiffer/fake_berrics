@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/features', to: 'pages#features'
+  get '/features', to: 'videos#features'
   get '/log_in', to: 'pages#log_in'
   get '/view_cart', to: 'carts#view_cart'
 
