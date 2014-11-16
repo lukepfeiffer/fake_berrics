@@ -1,0 +1,13 @@
+%div.create_news
+  %ul
+    = form_for(@news_article) do |f|
+      %li= f.label :title
+      %li= f.text_field :title
+
+      %li= f.label :content
+      %li= f.text_area :content
+
+      %li= f.label :Image
+      %li= f.filepicker_field :filepicker_url
+
+      %li= f.submit

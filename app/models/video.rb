@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  Categories = ['full part', 'game of skate', 'bangin']
+  Categories = ['Full Part', 'Game Of Skate', 'Bangin']
   validates_presence_of :name, :desc, :filepicker_url
 
   def exerpt

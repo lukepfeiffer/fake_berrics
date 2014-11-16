@@ -1,16 +1,17 @@
 = link_to 'Create Product', new_product_path
-%div.categories
-  - @categories.each do |category|
-    %td= link_to category, products_path(category: category), class: 'category_links'
+%div.products
+  %div.categories
+    %p#category_name Clothing
+    - @categories.each do |category|
+      %li= link_to category, products_path(category: category), class: 'category_links'
 
-%table
-  - @products.each do |product|
-    %td
-      %li= link_to(filepicker_image_tag(product.filepicker_url), product_path(product.id))
-      %li= product.name
-      %li
-        = product.exerpt
-      %p= link_to product.category
-      %p
-        $
-        = product.price
+  %table.product_list
+    - @products.each do |product|
+      %td
+        %li= link_to(filepicker_image_tag(product.filepicker_url), product_path(product.id))
+        %li= product.name
+        %li= product.exerpt
+        %p= link_to product.category
+        %p
+          $
+          = product.price

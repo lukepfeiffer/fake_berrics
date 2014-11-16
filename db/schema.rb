@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102135149) do
+ActiveRecord::Schema.define(version: 20141116150027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(version: 20141102135149) do
     t.integer "quantity"
     t.integer "product_id"
     t.integer "cart_id"
+  end
+
+  create_table "news_articles", force: true do |t|
+    t.string "title"
+    t.text   "content"
+    t.string "filepicker_url"
   end
 
   create_table "products", force: true do |t|
